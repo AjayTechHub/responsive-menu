@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Menu</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="page-wrapper">
+    <header class="main-header">
+      <!-- Main Header -->
+      <nav class="main-menu">
+        <div class="logo">AJay Tech Hub</div>
+        <section class="menu-items">
+          <div class="menu-item active" onclick="onMenuItemClick(this)" data-choice="home">HOME</div>
+          <div class="menu-item" onclick="onMenuItemClick(this)" data-choice="services">SERVICES</div>
+          <div class="menu-item" onclick="onMenuItemClick(this)" data-choice="portfolio">PORTFOLIO</div>
+          <div class="menu-item" onclick="onMenuItemClick(this)" data-choice="contact">CONTACT</div>
+        </section>
+        <div class="hamburger-btn" onclick="showOverlayMenu()"></div>
+      </nav>
+
+      <!-- Overlay Menu -->
+      <nav class="overlay-menu">
+        <div class="overlay-menu-wrapper">
+          <div class="close-btn" onclick="hideOverlayMenu()"></div>
+          <section class="menu-items">
+            <div class="menu-item active" onclick="onOverlayMenuItemClick(this)" data-choice="home">HOME</div>
+            <div class="menu-item" onclick="onOverlayMenuItemClick(this)" data-choice="services">SERVICES</div>
+            <div class="menu-item" onclick="onOverlayMenuItemClick(this)" data-choice="portfolio">PORTFOLIO</div>
+            <div class="menu-item" onclick="onOverlayMenuItemClick(this)" data-choice="contact">CONTACT</div>
+          </section>
+        </div>
+      </nav>
+
+    </header>
+    <section class="content-wrapper"></section>
+    <footer class="main-footer">
+      <p>&copy<span class="copyrightYear"></span> AJay Tech Hub. All rights reserved.</p>
+    </footer>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>

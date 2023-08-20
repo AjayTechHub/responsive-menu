@@ -1,0 +1,159 @@
+:root {
+  --font-alegreya: 'Alegreya', serif;
+
+  --text-color: #333;
+  --footer-text-color: #c4c4c4;
+  --primary-color: #005c5c;
+  --secondary-color: #097272;
+  --menu-hover-color: #acaaaa;
+  --border-color: #dbdbdb;
+  --white-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+html {
+  font-size: 62.5%; /* (62.5 / 100) * 16 = 10px */
+}
+body {
+  margin: 0;
+  font-family: var(--font-alegreya);
+}
+.page-wrapper {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.content-wrapper {
+  flex: 1;
+  min-height: 1200px;
+  margin-top: 55px;
+  background: url("assets/images/hexagon.svg");
+}
+
+/* Header */
+.main-header {
+  padding: 1rem 1.8rem;
+  border-bottom: 3px solid var(--border-color);
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: var(--white-color);
+}
+.main-menu {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.main-menu .menu-items {
+  flex: 1;
+
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+}
+.main-menu .menu-item {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: 500ms ease-in-out;
+}
+.main-menu .menu-item.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--secondary-color);
+  font-weight: 600;
+}
+.main-menu .menu-item:hover:not(.active) {
+  border-bottom-color: var(--menu-hover-color);
+}
+.hamburger-btn {
+  background: url("assets/icons/icons8-menu.svg");
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* Overlay Menu */
+.overlay-menu {
+  display: none;
+}
+.overlay-menu.show {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: var(--primary-color);
+}
+.overlay-menu-wrapper {
+  padding: 1rem 0;
+  position: relative;
+}
+.overlay-menu .menu-items {
+  text-align: center;
+  margin-top: 4.5rem;
+  font-size: 2rem;
+}
+.overlay-menu .menu-item {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-top: 2rem;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.overlay-menu .menu-item.active {
+  font-weight: 600;
+  color: var(--text-color);
+  background: var(--border-color);
+}
+
+
+.close-btn {
+  background: url("assets/icons/icons8-close.svg");
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+}
+
+/* Footer */
+.main-footer {
+  background: var(--text-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 1.7rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 992px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+  .main-header {
+    padding: 2rem 3rem;
+  }
+  .main-menu .menu-items {
+    display: flex;
+  }
+  .main-menu .menu-item {
+    font-size: 1.8rem;
+  }
+  .hamburger-btn {
+    display: none;
+  }
+  .content-wrapper {
+    margin-top: 80px;
+  }
+}
